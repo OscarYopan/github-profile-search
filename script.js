@@ -9,6 +9,17 @@ async function getUser(username) {
     const { data }  = await axios.get(APIURL + username)
 
     createUserCard(data)
+    getRepos(username)
+  } catch(err) { 
+    createErrorCard('Not Found')
+  }
+}
+
+async function getRepos(username) {
+  try {
+    const { data }  = await axios.get(APIURL + username + '/repos')
+
+    addReposToCard(data)
   } catch(err) { 
     createErrorCard('Not Found')
   }
@@ -52,6 +63,15 @@ function createErrorCard(msg) {
   `
 
   main.innerHTML = cardHTML
+}
+
+function addReposToCard(repos) {
+  const reposEl = document.querySelectorAll('#repos')
+
+  repos
+    .array.forEach(repo => {
+      const repoLink = document.createElement('a')
+    });
 }
 
 form.addEventListener('submit', (e) => {

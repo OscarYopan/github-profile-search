@@ -1,19 +1,15 @@
-/*Reset*/
 *{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/*Default*/
 :root {
   --cor1: #BFA7F2;
   --cor2: #323240;
   --cor3: #636573;
   --cor4: #67733D;
   --cor5: #DCF235;
-  --white: #ffffff;
-  --black: #000000;
 }
 
 html{
@@ -23,7 +19,7 @@ html{
 
 body{
   background-color: var(--cor2);
-  color: var(--black);
+  color: black;
   display: flex;
   flex-direction: column;
   align-items: center;
